@@ -13,7 +13,7 @@ export default ({ ql, setPlayground }) => {
     );
   }
   return (
-    <div style={{ height: "100vh", width: "100vw" }}>
+    <div style={{ height: "calc(100vh - 3rem)", width: "100vw" }}>
       <GraphiQL fetcher={graphQLFetcher} />
       <div
         style={{
@@ -24,11 +24,17 @@ export default ({ ql, setPlayground }) => {
           margin: 25,
           height: 75,
           width: 75,
-          background: "black",
+          background: "#ee6e73",
           borderRadius: 100,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          color: "white",
         }}
         onClick={() => setPlayground(false)}
-      ></div>
+      >
+        x
+      </div>
     </div>
   );
 };

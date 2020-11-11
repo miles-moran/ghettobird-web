@@ -12,7 +12,7 @@ code {
     monospace;
 }
 
-li {
+.nav-link {
   display: inline-block;
   margin-right: 2rem;
 }
@@ -22,7 +22,17 @@ a {
   color: black;
 }
 
+.nav-links {
+  height: 2.5rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
 nav {
-  height: 2rem;
-  border-bottom: 0.1rem solid black;
+  background: #4db6ac;
+}
+
+.common-button:hover {
+  cursor: pointer;
 }
