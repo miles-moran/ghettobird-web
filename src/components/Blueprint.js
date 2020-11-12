@@ -17,7 +17,7 @@ export default () => {
       .then((res) => {
         setBlueprint(res.data());
         axios
-          .post("http://127.0.0.1:5000/", res.data().blue, {})
+          .post("https://ghettobird.herokuapp.com/", res.data().blue, {})
           .then((res) => {
             setData(res.data);
             setGraph(generateGraphQL(res.data));

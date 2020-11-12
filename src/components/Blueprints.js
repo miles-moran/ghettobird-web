@@ -30,7 +30,7 @@ export default ({}) => {
           <Blueprint />
         </Route>
         <Route path={match.path}>
-          Blueprints
+          <div className='container'>
           <ul>
             {blueprints.map((b, i) => (
               <li key={i}>
@@ -41,6 +41,7 @@ export default ({}) => {
               //   </>
             ))}
           </ul>
+          </div>
         </Route>
       </Switch>
   );

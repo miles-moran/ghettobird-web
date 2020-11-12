@@ -2,42 +2,77 @@ import React from "react";
 import Blueprints from "./components/Blueprints";
 import Home from "./components/Home";
 import About from "./components/About";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  NavLink,
+} from "react-router-dom";
 import Blog from "./components/Blog";
-import Blueprint from "./components/Blueprint";
+
 const App = () => {
   return (
     <Router>
       <nav>
-        <ul className='nav-links'>
+        <ul className="nav-links">
+          <span className="left">
+            <li className="nav-link">
+              <NavLink
+                activeStyle={{ borderBottom: "2px solid white", borderTop: "2px solid white" }}
+                style={{ color: "white" }}
+                to="/blueprints"
+              >
+                Blueprints
+              </NavLink>
+            </li>
+          </span>
+
           <li className="nav-link">
-            <Link to="/">Home</Link>
+            <NavLink
+              style={{ color: "white" }}
+              activeStyle={{ borderBottom: "2px solid white", borderTop: "2px solid white" }}
+              to="/"
+              exact
+            >
+              Home
+            </NavLink>
           </li>
           <li className="nav-link">
-            <Link to="/about">About</Link>
+            <NavLink
+              style={{ color: "white" }}
+              activeStyle={{ borderBottom: "2px solid white", borderTop: "2px solid white" }}
+              to="/about"
+            >
+              About
+            </NavLink>
           </li>
           <li className="nav-link">
-            <Link to="/blog">Blog</Link>
-          </li>
-          <li className="nav-link">
-            <Link to="/blueprints">Blueprints</Link>
+            <NavLink
+              style={{ color: "white" }}
+              activeStyle={{ borderBottom: "2px solid white", borderTop: "2px solid white" }}
+              to="/blog"
+            >
+              Blog
+            </NavLink>
           </li>
         </ul>
       </nav>
-      <Switch>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/blog">
-          <Blog />
-        </Route>
-        <Route path="/blueprints">
-          <Blueprints />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
+      <div className="content">
+        <Switch>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/blog">
+            <Blog />
+          </Route>
+          <Route path="/blueprints">
+            <Blueprints />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </div>
     </Router>
   );
 };
