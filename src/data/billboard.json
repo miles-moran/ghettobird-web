@@ -1,0 +1,14 @@
+{
+    "url": "http://www.billboard.com/charts/hot-100",
+    "flightpath": {
+        "date": "//button[@class='date-selector__button button--link']",
+        "songs": [{
+            "@iterate": "//li[@class='chart-list__element display--flex']",
+            "rank": ".//span[@class='chart-element__rank__number']",
+            "title": ".//span[@class='chart-element__information__song text--truncate color--primary']",
+            "artist": ".//span[@class='chart-element__information__artist text--truncate color--secondary']",
+            "weeksOnChart": ".//span[@class='chart-element__information__delta__text text--week']",
+            "peakRank": ".//span[@class='chart-element__information__delta__text text--peak']"
+        }]
+     }
+}

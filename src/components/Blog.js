@@ -9,7 +9,8 @@ export default ({}) => {
     }, []);
   return (
     <div>
-      <ReactMarkdown children={markdown}/>
+      Coming soon.
+      {/* <ReactMarkdown children={markdown}/> */}
     </div>
   );
 };

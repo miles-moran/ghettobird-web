@@ -1,0 +1,13 @@
+{
+    "url": "https://www.indeed.com/cmp/Unigroup,-Inc/reviews",
+    "flightpath": {
+        "reviews": [{
+            "@iterate": "//div[@data-tn-section='reviews']",
+            "content": ".//span[@class='cmp-NewLineToBr-text']",
+            "rating": ".//div[@class='cmp-ReviewRating-text']",
+            "title": ".//a[@class='cmp-Review-titleLink']",
+            "pros": ".//div[@class='cmp-ReviewProsCons-prosText']//span//span",
+            "cons": ".//div[@class='cmp-ReviewProsCons-consText']//span//span"
+        }]
+     }
+}

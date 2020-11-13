@@ -16,12 +16,18 @@ code {
 
 .nav-link {
   display: flex;
-  margin-right: 1rem;
+  margin-right:1rem;
+  margin-left: 2rem;
 }
 
 a {
   text-decoration: none;
   color: black;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
 }
 
 .nav-links {
@@ -35,6 +41,8 @@ a {
 
 nav {
   background: #ee6e73;
+  position: fixed;
+  width: 100%;
 }
 
 .common-button:hover {
@@ -59,10 +67,73 @@ nav {
 }
 
 .content {
-  min-height: calc(100vh - 2.5rem);
+  min-height: calc(100vh - 2.5rem - 4rem);
   display: flex;
+  padding: 2rem;
+  padding-top: 4.5rem;
 }
 
 .active-nav-link {
   font-size: 1000;
+}
+
+.selenium-marker {
+  margin-left: 1rem;
+  padding: .1rem 1rem .1rem 1rem;
+  border-radius: 25px;
+  background-color: rgb(110, 195, 255);
+  color: white;
+}
+
+.blueprint-li {
+  margin-top: .5rem;
+  border-left: 3px solid #ee6e73;
+  padding-left: 2rem;
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+  padding-right: 2rem;
+}
+
+.blueprint-li:hover {
+  background-color: rgb(255, 231, 231);
+}
+
+.hl {
+  background-color: #ee6e73;
+}
+
+.input-search {
+  padding: .2rem;
+  font-size: 1.1rem;
+  border: 2px solid #ee6e73;
+  border-radius: 5px;
+}
+
+.home-special {
+  position: relative;
+  top: -4rem;
+}
+
+.flex-columns {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+}
+
+.focus-container {
+  background-color: rgb(255, 231, 231);
+  display: flex;
+  position: fixed; 
+  height: calc(100vh - 11rem);
+  width: 100%;
+  padding: 2rem;
+  border-radius: 32.5px;
+}
+
+.focus-column {
+  flex-grow: 1;
+  display: flex;
 }
