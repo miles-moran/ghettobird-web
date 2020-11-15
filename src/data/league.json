@@ -1,0 +1,18 @@
+{
+    "url": "https://na.op.gg/statistics/champion/",
+    "flightpath": {
+        "posts": [{
+            "@iterate": "//table[@class='StatisticsChampionTable sortable tablesorter tablesorter-default']//tr",
+            "name": ".//td[@class='Cell ChampionName']//a",
+            "win_rate": ".//td[4]",
+            "games_played": ".//td[5]",
+            "kda": ".//td[6]//span",
+            "cs": ".//td[7]//span",
+            "gold": ".//td[8]//span"
+        }]
+     },
+     "options": {
+         "browser": true
+     }
+}
+  

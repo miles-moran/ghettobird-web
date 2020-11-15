@@ -7,6 +7,7 @@ import db from "../Config";
 import { useParams } from "react-router-dom";
 import Button from "./common/Button";
 import { hasSelenium } from "../utils/hasSelenium";
+import JSONInput from 'react-json-editor-ajrm';
 export default () => {
   const [blueprint, setBlueprint] = useState({});
   const [data, setData] = useState(null);
@@ -14,8 +15,9 @@ export default () => {
   const [playground, setPlayground] = useState(false);
   const [error, setError] = useState(null);
   const { gid } = useParams();
-
-  const apiLink = `https://ghettobird.herokuapp.com/api?gid=${gid}`;
+  // const apiLink = `https://ghettobird.herokuapp.com/api?gid=${gid}`;
+  const apiLink = `http://127.0.0.1:5000/api?gid=${gid}`;
+  console.log(apiLink);
   useEffect(() => {
     db.collection("blueprints")
       .doc(gid)
@@ -23,13 +25,15 @@ export default () => {
       .then((res) => {
         setBlueprint(res.data());
         axios
-          // .post("https://ghettobird.herokuapp.com/", res.data().blue, {})
-          .post("http://127.0.0.1:5000/", res.data().blue, {})
+          .get(apiLink)
           .then((res) => {
             setData(res.data);
             setGraph(generateGraphQL(res.data));
           })
-          .catch((err) => setError(err));
+          .catch((err) => {
+            console.log(err);
+            setError(err);
+          });
       });
   }, []);
 
@@ -45,14 +49,12 @@ export default () => {
     return <Graphicl ql={graph} setPlayground={setPlayground} />;
   }
 
-  const selenium = hasSelenium(blueprint)
+  const selenium = hasSelenium(blueprint);
 
   return (
     <div>
       <div style={{ fontWeight: "bold" }}>Root URL</div>{" "}
-      <div>
-        {selenium && <div>Selenium</div>}
-      </div>
+      <div>{selenium && <div>Selenium</div>}</div>
       <a target="_blank" href={blueprint.url}>
         {blueprint.url}
       </a>

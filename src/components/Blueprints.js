@@ -4,7 +4,6 @@ import Blueprint from "./Blueprint";
 import { hasSelenium } from "../utils/hasSelenium";
 import { elastic } from "../utils/highlight";
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
   Link,
@@ -41,20 +40,27 @@ export default ({}) => {
             <div>{filtered.length} results</div>
 
             <ul>
+            <div className='warning-blue'>* API's marked by <span style={{color: "rgb(69, 177, 255)"}}>blue</span> use Selenium and are expiremental. They are slow and prone to crashes.</div>
               {filtered.map((b, i) => (
-                <li
-                  onMouseOver={() => setFocus(b)}
-                  className="blueprint-li"
-                  key={i}
-                >
-                  <div>
-                    <span style={{ fontWeight: "bold" }}>{b.description}</span>
-                    {hasSelenium(b.blue) && (
-                      <span className="selenium-marker">selenium</span>
-                    )}
-                  </div>
-                  <Link to={`${match.url}/${b.gid}`}>{b.url}</Link>
-                </li>
+                <Link to={`${match.url}/${b.gid}`}>
+                  <li
+                    onMouseOver={() => setFocus(b)}
+                    className={
+                      hasSelenium(b.blue) ? "blueprint-li" : "pinkprint-li"
+                    }
+                    key={i}
+                  >
+                    <div>
+                      <span style={{ fontWeight: "bold" }}>
+                        {b.description}
+                      </span>
+                      {/* {hasSelenium(b.blue) && (
+                        <span className="selenium-marker">selenium</span>
+                      )} */}
+                    </div>
+                    <div>{b.url}</div>
+                  </li>
+                </Link>
               ))}
             </ul>
           </div>

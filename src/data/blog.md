@@ -1,31 +1,20 @@
-# Blog / Developer Journal
-## 11/11/20
-### Thoughts
+# Blog 
+## 11/13/20: Todos
 
-The GhettoQL tool is functional and I find it very helpful, powerful even. But there is a lot of work that could be on documentation. However, I feel like writing documentation for it is a waste until I really nail down the syntax.
-
-I've never really built anything like this, an app built for building other apps. It's a different mindset, and there's so many ways to approach the problem that it is a bit paralyzing. I suppose that's why there's so many languages out there. But that's why this is so fun.
-
-But before I write polished documentation, and before I polish syntax, I should really think about what sort of tool this is to begin with. 
-
-* Library
-* Framework
-* Query Language
-
-The definition of all these are a bit lost me, blurred would be the better word. 
-
-There are aspects of the pip package that would be considered library-esque. Especially, the tools I have created for more easily integrating with google sheets.
-
-There are also parts that resemble a framework. The core functionality is useless if you do not follow the flightpath structure. 
-
-The JSON like structure also seems to behave like language in a way. It sort of queries the HTML page and groups data at the same time.
-
-### Plans
-I have just written a rough draft for the about section to articulate what my goals are and what Ghettobird does and hopes to do. I can leave GhettoQL untouched for now as I'm trying to piece togethor this proof of concept.
-
-Here's what needs to be done:
-
-* Styling
-* Modify my backend to accept a blueprint ID in the request, and the GraphQL query in the body.
-* Shift the GraphQL logic (or at least replicate it) to the backend.
-
+### MVP
+#### Technical
+* 1) Figure out why my backend crashes in production, but runs smoothly locally.
+* 2) Front-end uses Graphiql as a proof-of-concept but this needs to be moved to the backend. Integrate GraphQL with flask backend.
+* 3) If (1) and (2) are completed. Make queries for the URL. Example: https://www.indeed.com/cmp/Unigroup,-Inc/reviews ---> https://www.indeed.com/cmp/{company_name}/reviews. This company_name query needs to be input via graphql. User's shouldn't even be aware that the data is getting fetched from a different URL.
+#### Styling
+* 1) Invididual Blueprint page
+* 2) Graphiql page
+* 3) Blog & About
+### The Future
+* 1) Queries from Technical (3) could be saved in the database
+* 2) Micro-API's could be linked via GraphQl. Example > The UFC rankings API could link to the UFC stats api. The trick is that in this particular instance, the URL for invidual stats uses a name with spaces being replaced by dashes (might not be a problem). But this relationship could somehow be established in the GraphQL schema. This would also actually leverage GraphQL in a useful way. If we were to request the UFC rankings and wanted stats. The requests could be made automatically. If there was no interest in stats. The request wouldn't be made at all, thanks to GraphQL.
+* 3) Categories for API's
+* 4) IMPORTANT: Tool that allows users to create a GhetoQL query without knowledge of XPATH's. This could be done in a variety a ways. Given a single page, users could type in their expect values for various fields. A script could go to the element where the text equals the expected result and use an algorithm to find an xpath that applies only to that element. This unique xpath is what would be used in the GhettoQL query.
+* 5) A way of recognizing if a website's structure has changed. Downed API's could be reported and fixed.
+* 6) If a downed API is detected, a script could potentially repair the GhettoQL using passed data. It could try to find similiar data and or selectors to rewrite the query. Probably not a worthy use of time. (4) is necessary to do this.
+* 7) 

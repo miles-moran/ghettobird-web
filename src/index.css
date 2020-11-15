@@ -85,21 +85,35 @@ nav {
   color: white;
 }
 
-.blueprint-li {
+.pinkprint-li {
   margin-top: .5rem;
-  border-left: 3px solid #ee6e73;
   padding-left: 2rem;
   padding-top: .25rem;
   padding-bottom: .25rem;
   padding-right: 2rem;
+  border-left: 3px solid #ee6e73;
 }
 
-.blueprint-li:hover {
+.pinkprint-li:hover {
   background-color: rgb(255, 231, 231);
 }
 
+.blueprint-li {
+  margin-top: .5rem;
+  padding-left: 2rem;
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+  padding-right: 2rem;
+  border-left: 3px solid  rgb(110, 195, 255);
+}
+
+.blueprint-li:hover {
+  background-color: rgb(211, 244, 255);
+}
+
+
 .hl {
-  background-color: #ee6e73;
+  background-color: #fbc3ff;
 }
 
 .input-search {
@@ -124,7 +138,7 @@ nav {
 }
 
 .focus-container {
-  background-color: rgb(255, 231, 231);
+  background-color: rgb(231, 246, 255);
   display: flex;
   position: fixed; 
   height: calc(100vh - 11rem);
@@ -136,4 +150,9 @@ nav {
 .focus-column {
   flex-grow: 1;
   display: flex;
+}
+
+.warning-blue {
+  font-size: .8rem;
+  font-weight: bold;
 }

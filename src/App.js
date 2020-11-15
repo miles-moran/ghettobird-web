@@ -2,6 +2,7 @@ import React from "react";
 import Blueprints from "./components/Blueprints";
 import Home from "./components/Home";
 import About from "./components/About";
+import Create from "./components/Create";
 import {
   BrowserRouter as Router,
   Switch,
@@ -16,13 +17,30 @@ const App = () => {
       <nav>
         <ul className="nav-links">
           <span className="left">
-            <li className="nav-link">
+            <li className="nav-link" style={{display: "inline-block"}}>
               <NavLink
-                activeStyle={{ borderBottom: "2px solid white", borderTop: "2px solid white" }}
+                activeStyle={{
+                  borderBottom: "2px solid white",
+                  borderTop: "2px solid white",
+                }}
                 style={{ color: "white" }}
                 to="/blueprints"
               >
                 Blueprints
+              </NavLink>
+            </li>
+  
+  
+            <li className="nav-link" style={{display: "inline-block"}}>
+              <NavLink
+                activeStyle={{
+                  borderBottom: "2px solid white",
+                  borderTop: "2px solid white",
+                }}
+                style={{ color: "white" }}
+                to="/create"
+              >
+                Create
               </NavLink>
             </li>
           </span>
@@ -30,7 +48,10 @@ const App = () => {
           <li className="nav-link">
             <NavLink
               style={{ color: "white" }}
-              activeStyle={{ borderBottom: "2px solid white", borderTop: "2px solid white" }}
+              activeStyle={{
+                borderBottom: "2px solid white",
+                borderTop: "2px solid white",
+              }}
               to="/"
               exact
             >
@@ -40,7 +61,10 @@ const App = () => {
           <li className="nav-link">
             <NavLink
               style={{ color: "white" }}
-              activeStyle={{ borderBottom: "2px solid white", borderTop: "2px solid white" }}
+              activeStyle={{
+                borderBottom: "2px solid white",
+                borderTop: "2px solid white",
+              }}
               to="/about"
             >
               About
@@ -49,7 +73,10 @@ const App = () => {
           <li className="nav-link">
             <NavLink
               style={{ color: "white" }}
-              activeStyle={{ borderBottom: "2px solid white", borderTop: "2px solid white" }}
+              activeStyle={{
+                borderBottom: "2px solid white",
+                borderTop: "2px solid white",
+              }}
               to="/blog"
             >
               Blog
@@ -67,6 +94,9 @@ const App = () => {
           </Route>
           <Route path="/blueprints">
             <Blueprints />
+          </Route>
+          <Route path="/create">
+            <Create />
           </Route>
           <Route path="/">
             <Home />
